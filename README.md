@@ -8,4 +8,4 @@
 
 ## Frontend
 
-### TypeScripts
+### TypeScript
