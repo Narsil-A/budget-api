@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework import authentication, permissions
 # models and serializers 
 from .models import Expense, Income, Budget
 from .serializers import ExpenseSerializer, IncomeSerializer, BudgetSerializer
@@ -16,11 +17,22 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     """
     queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    lookup_field = 'pk'
+    
 
 class IncomeViewSet(viewsets.ModelViewSet):
+
     queryset = Income.objects.all()
     serializer_class = IncomeSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    lookup_field = 'pk'
+   
 
 class BudgetViewSet(viewsets.ModelViewSet):
+
     queryset = Budget.objects.all()
     serializer_class = BudgetSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    lookup_field = 'pk'
+    
