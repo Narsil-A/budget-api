@@ -17,6 +17,7 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     """
     queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
+    authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     lookup_field = 'pk'
     
@@ -25,6 +26,7 @@ class IncomeViewSet(viewsets.ModelViewSet):
 
     queryset = Income.objects.all()
     serializer_class = IncomeSerializer
+    authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     lookup_field = 'pk'
    
@@ -33,6 +35,7 @@ class BudgetViewSet(viewsets.ModelViewSet):
 
     queryset = Budget.objects.all()
     serializer_class = BudgetSerializer
+    authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     lookup_field = 'pk'
     
