@@ -1,4 +1,4 @@
-# Home Economics app
+# budget api
 
 ## This app is for managing economic issues of a home
 
